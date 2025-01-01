@@ -1,136 +1,137 @@
-# 📚 AI reads books: Page-by-Page PDF Knowledge Extractor & Summarizer
+# 📚 AI 阅读书籍：逐页PDF知识提取与总结器
 
-The `read_books.py` script performs an intelligent page-by-page analysis of PDF books, methodically extracting knowledge points and generating progressive summaries at specified intervals. It processes each page individually, allowing for detailed content understanding while maintaining the contextual flow of the book. Below is a detailed explanation of how the script works:
+`read_books.py` 脚本对PDF书籍进行智能逐页分析，系统地提取知识点并在指定间隔生成逐步总结。它逐页处理内容，允许对详细内容进行理解，同时保持书籍的上下文连贯性。以下是脚本的工作原理详细说明：
 
-### Features
+### 功能
 
-- 📚 Automated PDF book analysis and knowledge extraction
-- 🤖 AI-powered content understanding and summarization
-- 📊 Interval-based progress summaries
-- 💾 Persistent knowledge base storage
-- 📝 Markdown-formatted summaries
-- 🎨 Color-coded terminal output for better visibility
-- 🔄 Resume capability with existing knowledge base
-- ⚙️ Configurable analysis intervals and test modes
-- 🚫 Smart content filtering (skips TOC, index pages, etc.)
-- 📂 Organized directory structure for outputs
+- 📚 自动化PDF书籍分析和知识提取
+- 🤖 基于AI的内容理解和总结
+- 📊 间隔式进度总结
+- 💾 持久化知识库存储
+- 📝 Markdown格式的总结
+- 🎨 彩色终端输出以提高可见性
+- 🔄 使用现有知识库恢复功能
+- ⚙️ 可配置的分析间隔和测试模式
+- 🚫 智能内容过滤（跳过目录、索引页等）
+- 📂 组织良好的输出目录结构
 
-## ❤️ Support & Get 400+ AI Projects
+## ❤️ 支持与获取400+AI项目
 
-This is one of 400+ fascinating projects in my collection! [Support me on Patreon](https://www.patreon.com/c/echohive42/membership) to get:
+这是我的400+个有趣项目之一！[在Patreon支持我](https://www.patreon.com/c/echohive42/membership)以获取：
 
-- 🎯 Access to 400+ AI projects (and growing daily!)
-  - Including advanced projects like [2 Agent Real-time voice template with turn taking](https://www.patreon.com/posts/2-agent-real-you-118330397)
-- 📥 Full source code & detailed explanations
-- 📚 1000x Cursor Course
-- 🎓 Live coding sessions & AMAs
-- 💬 1-on-1 consultations (higher tiers)
-- 🎁 Exclusive discounts on AI tools & platforms (up to $180 value)
+- 🎯 访问400+个AI项目（每天增加！）
+  - 包括高级项目如[双代理实时语音模板带轮流发言](https://www.patreon.com/posts/2-agent-real-you-118330397)
+- 📥 完整源代码及详细说明
+- 📚 1000倍光标课程
+- 🎓 实时编码会话及AMA
+- 💬 一对一咨询（高级会员）
+- 🎁 独家折扣AI工具及平台（最高价值$180）
 
-## How to Use
+## 如何使用
 
-1. **Setup**
+1. **设置**
+
    ```bash
-   # Clone the repository
-   git clone [repository-url]
-   cd [repository-name]
+   # 克隆仓库
+   git clone [仓库地址]
+   cd [仓库名称]
 
-   # Install requirements
+   # 安装依赖
    pip install -r requirements.txt
    ```
+2. **配置**
 
-2. **Configure**
-   - Place your PDF file in the project root directory
-   - Open `read_books.py` and update the `PDF_NAME` constant with your PDF filename
-   - (Optional) Adjust other constants like `ANALYSIS_INTERVAL` or `TEST_PAGES`
+   - 将PDF文件放置在项目根目录中
+   - 打开 `read_books.py` 并更新 `PDF_NAME` 常量以使用您的PDF文件名
+   - （可选）调整其他常量如 `ANALYSIS_INTERVAL` 或 `TEST_PAGES`
+3. **运行**
 
-3. **Run**
    ```bash
    python read_books.py
    ```
+4. **输出**
+   脚本将生成：
 
-4. **Output**
-   The script will generate:
-   - `book_analysis/knowledge_bases/`: JSON files containing extracted knowledge
-   - `book_analysis/summaries/`: Markdown files with interval and final summaries
-   - `book_analysis/pdfs/`: Copy of your PDF file
+   - `book_analysis/knowledge_bases/`: 包含提取知识的JSON文件
+   - `book_analysis/summaries/`: 包含间隔和最终总结的Markdown文件
+   - `book_analysis/pdfs/`: 您的PDF文件副本
+5. **自定义选项**
 
-5. **Customization Options**
-   - Set `ANALYSIS_INTERVAL = None` to skip interval summaries
-   - Set `TEST_PAGES = None` to process entire book
-   - Adjust `MODEL` and `ANALYSIS_MODEL` for different AI models
+   - 设置 `ANALYSIS_INTERVAL = None` 以跳过间隔总结
+   - 设置 `TEST_PAGES = None` 以处理整本书
+   - 调整 `MODEL` 和 `ANALYSIS_MODEL` 以使用不同的AI模型
 
-### Configuration Constants
+### 配置常量
 
-- `PDF_NAME`: The name of the PDF file to be analyzed.
-- `BASE_DIR`: The base directory for the analysis.
-- `PDF_DIR`: Directory where the PDF file is stored.
-- `KNOWLEDGE_DIR`: Directory where the knowledge base will be saved.
-- `SUMMARIES_DIR`: Directory where the summaries will be saved.
-- `PDF_PATH`: Full path to the PDF file.
-- `OUTPUT_PATH`: Path to the knowledge base JSON file.
-- `ANALYSIS_INTERVAL`: Number of pages after which an interval analysis is generated. Set to `None` to skip interval analyses.
-- `MODEL`: The model used for processing pages.
-- `ANALYSIS_MODEL`: The model used for generating analyses.
-- `TEST_PAGES`: Number of pages to process for testing. Set to `None` to process the entire book.
+- `PDF_NAME`: 要分析的PDF文件名。
+- `BASE_DIR`: 分析的基础目录。
+- `PDF_DIR`: 存储PDF文件的目录。
+- `KNOWLEDGE_DIR`: 存储知识库的目录。
+- `SUMMARIES_DIR`: 存储总结的目录。
+- `PDF_PATH`: PDF文件的完整路径。
+- `OUTPUT_PATH`: 知识库JSON文件的路径。
+- `ANALYSIS_INTERVAL`: 生成间隔分析的页数。设置为 `None` 以跳过间隔分析。
+- `MODEL`: 用于处理页面的模型。
+- `ANALYSIS_MODEL`: 用于生成分析的模型。
+- `TEST_PAGES`: 用于测试的页数。设置为 `None` 以处理整本书。
 
-### Classes and Functions
+### 类和函数
 
-#### `PageContent` Class
+#### `PageContent` 类
 
-A Pydantic model that represents the structure of the response from the OpenAI API for page content analysis. It has two fields:
+一个Pydantic模型，表示从OpenAI API获取的页面内容分析响应结构。它有两个字段：
 
-- `has_content`: A boolean indicating if the page has relevant content.
-- `knowledge`: A list of knowledge points extracted from the page.
+- `has_content`: 布尔值，指示页面是否有相关内容。
+- `knowledge`: 从页面提取的知识点列表。
 
 #### `load_or_create_knowledge_base() -> Dict[str, Any]`
 
-Loads the existing knowledge base from the JSON file if it exists. If not, it returns an empty dictionary.
+如果存在，则从JSON文件加载现有知识库。如果不存在，则返回一个空字典。
 
 #### `save_knowledge_base(knowledge_base: list[str])`
 
-Saves the knowledge base to a JSON file. It prints a message indicating the number of items saved.
+将知识库保存到JSON文件。它打印一条消息，指示保存的项目数量。
 
 #### `process_page(client: OpenAI, page_text: str, current_knowledge: list[str], page_num: int) -> list[str]`
 
-Processes a single page of the PDF. It sends the page text to the OpenAI API for analysis and updates the knowledge base with the extracted knowledge points. It also saves the updated knowledge base to a JSON file.
+处理PDF的单页。它将页面文本发送到OpenAI API进行分析，并使用提取的知识点更新知识库。它还将更新的知识库保存到JSON文件。
 
 #### `load_existing_knowledge() -> list[str]`
 
-Loads the existing knowledge base from the JSON file if it exists. If not, it returns an empty list.
+如果存在，则从JSON文件加载现有知识库。如果不存在，则返回一个空列表。
 
 #### `analyze_knowledge_base(client: OpenAI, knowledge_base: list[str]) -> str`
 
-Generates a comprehensive summary of the entire knowledge base using the OpenAI API. It returns the summary in markdown format.
+使用OpenAI API生成整个知识库的综合总结。它以Markdown格式返回总结。
 
 #### `setup_directories()`
 
-Sets up the necessary directories for the analysis. It clears any previously generated files and ensures the PDF file is in the correct location.
+设置分析所需的目录。它清除任何先前生成的文件，并确保PDF文件位于正确位置。
 
 #### `save_summary(summary: str, is_final: bool = False)`
 
-Saves the generated summary to a markdown file. It creates a file with a proper naming convention based on whether it is a final or interval summary.
+将生成的总结保存到Markdown文件。它根据是否为最终总结创建一个适当的文件名。
 
 #### `print_instructions()`
 
-Prints instructions for using the script. It explains the configuration options and how to run the script.
+打印使用脚本的说明。它解释配置选项和如何运行脚本。
 
 #### `main()`
 
-The main function that orchestrates the entire process. It sets up directories, loads the knowledge base, processes each page of the PDF, generates interval and final summaries, and saves them.
+主函数，协调整个过程。它设置目录，加载知识库，处理PDF的每一页，生成间隔和最终总结，并保存它们。
 
-### How It Works
+### 工作原理
 
-1. **Setup**: The script sets up the necessary directories and ensures the PDF file is in the correct location.
-2. **Load Knowledge Base**: It loads the existing knowledge base if it exists.
-3. **Process Pages**: It processes each page of the PDF, extracting knowledge points and updating the knowledge base.
-4. **Generate Summaries**: It generates interval summaries based on the `ANALYSIS_INTERVAL` and a final summary after processing all pages.
-5. **Save Results**: It saves the knowledge base and summaries to their respective files.
+1. **设置**: 脚本设置必要的目录，并确保PDF文件位于正确位置。
+2. **加载知识库**: 它加载现有知识库（如果存在）。
+3. **处理页面**: 它处理PDF的每一页，提取知识点并更新知识库。
+4. **生成总结**: 它根据 `ANALYSIS_INTERVAL` 生成间隔总结，并在处理完所有页面后生成最终总结。
+5. **保存结果**: 它将知识库和总结保存到各自的文件中。
 
-### Running the Script
+### 运行脚本
 
-1. Place your PDF in the same directory as the script.
-2. Update the `PDF_NAME` constant with your PDF filename.
-3. Run the script. It will process the book, extract knowledge points, and generate summaries.
+1. 将您的PDF文件放置在与脚本相同的目录中。
+2. 使用您的PDF文件名更新 `PDF_NAME` 常量。
+3. 运行脚本。它将处理书籍，提取知识点并生成总结。
 
-### Example Usage
+### 使用示例
